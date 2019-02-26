@@ -9,13 +9,15 @@ public class Calculator
 {
 
 	private int total;
+	private String history;
 	
 	/**
 	 * Constructor
 	 */
 	public Calculator ()
 	{
-		total = 0;  // not needed - included for clarity
+		total = 0;
+		history = "0";
 	}
 	
 	/**
@@ -34,6 +36,7 @@ public class Calculator
 	public void add (int value)
 	{
 		total += value;
+		history += " + " + value;
 	}
 	
 	/**
@@ -43,6 +46,7 @@ public class Calculator
 	public void subtract (int value)
 	{
 		total -= value;
+		history += " - " + value;
 	}
 	
 	/**
@@ -52,6 +56,7 @@ public class Calculator
 	public void multiply (int value)
 	{
 		total *= value;
+		history += " * " + value;
 	}
 	
 	/**
@@ -65,6 +70,7 @@ public class Calculator
 			total = 0;
 		else
 			total /= value;
+		history += " / " + value;
 	}
 	
 	/**
@@ -74,6 +80,6 @@ public class Calculator
 	 */
 	public String getHistory ()
 	{
-		return "";
+		return history;
 	}
 }
